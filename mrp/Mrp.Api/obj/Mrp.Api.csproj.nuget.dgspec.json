@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/laurin/FHstuff/SWEN/MRP/mrp/Mrp.Api/Mrp.Api.csproj": {}
+    "/home/laurin/FHstuff/SWEN/MRP/MediaRatingsPlatform/mrp/Mrp.Api/Mrp.Api.csproj": {}
   },
   "projects": {
-    "/home/laurin/FHstuff/SWEN/MRP/mrp/Mrp.Api/Mrp.Api.csproj": {
+    "/home/laurin/FHstuff/SWEN/MRP/MediaRatingsPlatform/mrp/Mrp.Api/Mrp.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/laurin/FHstuff/SWEN/MRP/mrp/Mrp.Api/Mrp.Api.csproj",
+        "projectUniqueName": "/home/laurin/FHstuff/SWEN/MRP/MediaRatingsPlatform/mrp/Mrp.Api/Mrp.Api.csproj",
         "projectName": "Mrp.Api",
-        "projectPath": "/home/laurin/FHstuff/SWEN/MRP/mrp/Mrp.Api/Mrp.Api.csproj",
+        "projectPath": "/home/laurin/FHstuff/SWEN/MRP/MediaRatingsPlatform/mrp/Mrp.Api/Mrp.Api.csproj",
         "packagesPath": "/home/laurin/.nuget/packages/",
-        "outputPath": "/home/laurin/FHstuff/SWEN/MRP/mrp/Mrp.Api/obj/",
+        "outputPath": "/home/laurin/FHstuff/SWEN/MRP/MediaRatingsPlatform/mrp/Mrp.Api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/laurin/.nuget/NuGet/NuGet.Config"
@@ -27,8 +27,8 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "/home/laurin/FHstuff/SWEN/MRP/mrp/Mrp.Models/Mrp.Models.csproj": {
-                "projectPath": "/home/laurin/FHstuff/SWEN/MRP/mrp/Mrp.Models/Mrp.Models.csproj"
+              "/home/laurin/FHstuff/SWEN/MRP/MediaRatingsPlatform/mrp/Mrp.Models/Mrp.Models.csproj": {
+                "projectPath": "/home/laurin/FHstuff/SWEN/MRP/MediaRatingsPlatform/mrp/Mrp.Models/Mrp.Models.csproj"
               }
             }
           }
@@ -342,14 +342,14 @@
         }
       }
     },
-    "/home/laurin/FHstuff/SWEN/MRP/mrp/Mrp.Models/Mrp.Models.csproj": {
+    "/home/laurin/FHstuff/SWEN/MRP/MediaRatingsPlatform/mrp/Mrp.Models/Mrp.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/laurin/FHstuff/SWEN/MRP/mrp/Mrp.Models/Mrp.Models.csproj",
+        "projectUniqueName": "/home/laurin/FHstuff/SWEN/MRP/MediaRatingsPlatform/mrp/Mrp.Models/Mrp.Models.csproj",
         "projectName": "Mrp.Models",
-        "projectPath": "/home/laurin/FHstuff/SWEN/MRP/mrp/Mrp.Models/Mrp.Models.csproj",
+        "projectPath": "/home/laurin/FHstuff/SWEN/MRP/MediaRatingsPlatform/mrp/Mrp.Models/Mrp.Models.csproj",
         "packagesPath": "/home/laurin/.nuget/packages/",
-        "outputPath": "/home/laurin/FHstuff/SWEN/MRP/mrp/Mrp.Models/obj/",
+        "outputPath": "/home/laurin/FHstuff/SWEN/MRP/MediaRatingsPlatform/mrp/Mrp.Models/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/laurin/.nuget/NuGet/NuGet.Config"

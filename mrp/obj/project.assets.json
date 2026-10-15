@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/laurin/FHstuff/SWEN/MRP/mrp/mrp.csproj",
+      "projectUniqueName": "/home/laurin/FHstuff/SWEN/MRP/MediaRatingsPlatform/mrp/mrp.csproj",
       "projectName": "mrp",
-      "projectPath": "/home/laurin/FHstuff/SWEN/MRP/mrp/mrp.csproj",
+      "projectPath": "/home/laurin/FHstuff/SWEN/MRP/MediaRatingsPlatform/mrp/mrp.csproj",
       "packagesPath": "/home/laurin/.nuget/packages/",
-      "outputPath": "/home/laurin/FHstuff/SWEN/MRP/mrp/obj/",
+      "outputPath": "/home/laurin/FHstuff/SWEN/MRP/MediaRatingsPlatform/mrp/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/laurin/.nuget/NuGet/NuGet.Config"
