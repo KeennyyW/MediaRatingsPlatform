@@ -1,0 +1,14 @@
+/home/laurin/FHstuff/SWEN/MRP/mrp/bin/Debug/net10.0/mrp
+/home/laurin/FHstuff/SWEN/MRP/mrp/bin/Debug/net10.0/mrp.deps.json
+/home/laurin/FHstuff/SWEN/MRP/mrp/bin/Debug/net10.0/mrp.runtimeconfig.json
+/home/laurin/FHstuff/SWEN/MRP/mrp/bin/Debug/net10.0/mrp.dll
+/home/laurin/FHstuff/SWEN/MRP/mrp/bin/Debug/net10.0/mrp.pdb
+/home/laurin/FHstuff/SWEN/MRP/mrp/obj/Debug/net10.0/mrp.GeneratedMSBuildEditorConfig.editorconfig
+/home/laurin/FHstuff/SWEN/MRP/mrp/obj/Debug/net10.0/mrp.AssemblyInfoInputs.cache
+/home/laurin/FHstuff/SWEN/MRP/mrp/obj/Debug/net10.0/mrp.AssemblyInfo.cs
+/home/laurin/FHstuff/SWEN/MRP/mrp/obj/Debug/net10.0/mrp.csproj.CoreCompileInputs.cache
+/home/laurin/FHstuff/SWEN/MRP/mrp/obj/Debug/net10.0/mrp.dll
+/home/laurin/FHstuff/SWEN/MRP/mrp/obj/Debug/net10.0/refint/mrp.dll
+/home/laurin/FHstuff/SWEN/MRP/mrp/obj/Debug/net10.0/mrp.pdb
+/home/laurin/FHstuff/SWEN/MRP/mrp/obj/Debug/net10.0/mrp.genruntimeconfig.cache
+/home/laurin/FHstuff/SWEN/MRP/mrp/obj/Debug/net10.0/ref/mrp.dll
