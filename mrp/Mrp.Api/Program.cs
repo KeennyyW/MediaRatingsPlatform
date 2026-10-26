@@ -1,2 +1,5 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿
+using Mrp.Api;
+
+Server server = new Server("http://localhost:8080/");
+await server.Start();
