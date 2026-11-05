@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Mrp.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7a64cb5f82b1be89aea3377be59937520ed5263e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+85d32ab2ab30bba55cee1322cbd3143a938f4b4f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Mrp.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Mrp.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
