@@ -1,17 +1,9 @@
-using System;
-
 namespace Mrp.Models;
 
 public class User
 {
-
-    private string name;
-    private int userID;
-    private string email;
-    private string password;
-    private string token;
-    private Entry[] entries;
-    
-
-
+    public int Id { get; set; }
+    public string Username { get; set; } = "";
+    public string PasswordHash { get; set; } = "";
+    public DateTime CreatedAt { get; set; }
 }

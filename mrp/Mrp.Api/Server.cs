@@ -25,8 +25,8 @@ public class Server
         try
         {
             Listener.Start();
-            
-            Console.WriteLine("HttpListener listening..."); 
+
+            Console.WriteLine("HttpListener listening...");
 
             while(true)
             {
@@ -57,7 +57,7 @@ public class Server
             Console.WriteLine(req.UserHostName);
             Console.WriteLine(req.UserAgent);
 
-            
+
 
             if (req.HttpMethod == "GET")
             {
@@ -69,7 +69,7 @@ public class Server
                     };
 
                     await SendJSON(resp, 200, response);
-                    
+
                 }
                 else
                 {
@@ -79,22 +79,22 @@ public class Server
                     };
 
                     await SendJSON(resp, 404, response);
-                    
+
                 }
             }
             else
             {
-                var body = $"Still needs to be implemented! You requested: {req.HttpMethod} {req.Url}\n";
+                var body = $"Still needs to be implemented You requested: {req.HttpMethod} {req.Url}\n";
                 var bytes = Encoding.UTF8.GetBytes(body);
                 resp.StatusCode = 200;
                 resp.ContentType = "text/plain; charset=utf-8";
                 resp.ContentLength64 = bytes.Length;
                 await resp.OutputStream.WriteAsync(bytes, 0, bytes.Length);
-               
+
             }
-        
-    
-            
+
+
+
         }
         catch (HttpListenerException)
         {
@@ -110,7 +110,7 @@ public class Server
             {
                 Error = "not found",
             };
-            
+
             await SendJSON(resp, 500, response);
         }
 

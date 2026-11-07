@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Mrp.Api/Mrp.Api.csproj" />
+  <Project Path="Mrp.Data/Mrp.Data.csproj" />
+  <Project Path="Mrp.Models/Mrp.Models.csproj" />
+</Solution>
