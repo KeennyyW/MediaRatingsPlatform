@@ -10,6 +10,7 @@
   <ItemGroup>
     <ProjectReference Include="../Mrp.Models/Mrp.Models.csproj" />
     <ProjectReference Include="..\Mrp.Data\Mrp.Data.csproj" />
+    <ProjectReference Include="..\Mrp.Business\Mrp.Business.csproj" />
   </ItemGroup>
 
   <ItemGroup>

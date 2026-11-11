@@ -8,7 +8,7 @@ namespace Mrp.Data;
 public class Database
 {
 
-    public async Task<NpgsqlConnection> OpenConnection()
+    public string GetConnectionString()
     {
         
         string? db_user = Environment.GetEnvironmentVariable("POSTGRES_USER");
@@ -22,12 +22,7 @@ public class Database
 
         var connString = $"Host=localhost;Port=5432;Username={db_user};Password={db_password};Database={db_name}";
 
-      
-        var conn = new NpgsqlConnection(connString);
-        await conn.OpenAsync();
-        Console.WriteLine("Connected to PostgreSQL!");
-
-        return conn;
+        return connString;
         
     }
 }
