@@ -99,9 +99,9 @@ public class AdoNetUserRepository : IUserRepository {
         using var connection = new NpgsqlConnection(ConnectionString);
         connection.Open();
 
-        using var cmd = new NpgsqlCommand("INSERT INTO users (username, password_hash) VALUES (@username, @password_hash)", connection);
+        using var cmd = new NpgsqlCommand("INSERT INTO users (username, passwordhash) VALUES (@username, @passwordhash)", connection);
         cmd.Parameters.AddWithValue("@username", user.Username);
-        cmd.Parameters.AddWithValue("@password_hash", user.PasswordHash);
+        cmd.Parameters.AddWithValue("@passwordhash", user.PasswordHash);
         cmd.ExecuteNonQuery();
     }
 

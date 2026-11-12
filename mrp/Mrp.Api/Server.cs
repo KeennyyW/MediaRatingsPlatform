@@ -7,6 +7,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.Json;
 using Microsoft.VisualBasic;
+using Mrp.Api.Controller;
 
 namespace Mrp.Api;
 
@@ -15,9 +16,13 @@ public class Server
     private readonly HttpListener Listener = new HttpListener();
     public string Port {get; set;}
     public static int RequestCount = 0;
-    public Server(string port)
+
+    private UserController _userController;
+    public Server(string port, UserController userController)
     {
         Listener.Prefixes.Add($"http://localhost:{port}/");
+
+        _userController = userController;
     }
 
     public async Task Start()
@@ -51,26 +56,25 @@ public class Server
             var req = context.Request;
             var resp = context.Response;
 
-            Console.WriteLine("Request #: {0}", ++RequestCount);
-            Console.WriteLine(req.Url.ToString());
-            Console.WriteLine(req.HttpMethod);
-            Console.WriteLine(req.UserHostName);
-            Console.WriteLine(req.UserAgent);
+            // Console.WriteLine("Request #: {0}", ++RequestCount);
+            // Console.WriteLine(req.Url.ToString());
+            // Console.WriteLine(req.HttpMethod);
+            // Console.WriteLine(req.UserHostName);
+            // Console.WriteLine(req.UserAgent);
+            string path = context.Request.Url.AbsolutePath;
+            string[] parts = path.Split('/', StringSplitOptions.RemoveEmptyEntries);
 
 
 
             if (req.HttpMethod == "GET")
             {
-                if (req.Url.AbsolutePath == "/ping")
-                {
-                    var response = new ApiResponse
-                    {
-                        Data = "ok",
-                    };
 
-                    await SendJSON(resp, 200, response);
+                if (parts[0] == "users")
+                {
+                _userController.Handle(context, parts);
 
                 }
+
                 else
                 {
                     var response = new ApiResponse
@@ -79,6 +83,14 @@ public class Server
                     };
 
                     await SendJSON(resp, 404, response);
+
+                }
+            }
+            else if (req.HttpMethod == "POST")
+            {
+                if (parts[0] == "users")
+                {
+                _userController.Handle(context, parts);
 
                 }
             }
@@ -92,8 +104,6 @@ public class Server
                 await resp.OutputStream.WriteAsync(bytes, 0, bytes.Length);
 
             }
-
-
 
         }
         catch (HttpListenerException)
