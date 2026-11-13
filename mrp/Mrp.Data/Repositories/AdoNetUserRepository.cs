@@ -89,11 +89,36 @@ public class AdoNetUserRepository : IUserRepository {
             CreatedAt = reader.GetDateTime(3)
         };
 
- 
-
         return user;
 
     }
+    public User? GetByToken(string token)
+    {
+        using var connection = new NpgsqlConnection(ConnectionString);
+        connection.Open();
+        using var cmd = new NpgsqlCommand("SELECT * FROM users WHERE token = @token", connection);
+        cmd.Parameters.AddWithValue("@token", token);
+
+        using var reader = cmd.ExecuteReader();
+
+        return null;
+
+        if (!reader.Read())
+        {
+            return null;
+        }
+        
+        var user = new User
+        {
+            Id = reader.GetInt32(reader.GetOrdinal("id")),
+            Username = reader.GetString(reader.GetOrdinal("username")),
+            PasswordHash = reader.GetString(reader.GetOrdinal("password_hash")),
+            CreatedAt = reader.GetDateTime(reader.GetOrdinal("created_at"))
+        };
+
+        return user;
+    }
+
     public void Add(User user)
     {
         using var connection = new NpgsqlConnection(ConnectionString);
