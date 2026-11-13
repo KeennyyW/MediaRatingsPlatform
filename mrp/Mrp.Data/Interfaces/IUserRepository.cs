@@ -8,4 +8,5 @@ public interface IUserRepository {
     List<User>? GetAll();
     void Add(User user);
     // void Remove(int id);
+    void UpdateToken(string token, int id);
 }

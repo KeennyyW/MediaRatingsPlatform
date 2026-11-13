@@ -105,6 +105,18 @@ public class AdoNetUserRepository : IUserRepository {
         cmd.ExecuteNonQuery();
     }
 
+    public void UpdateToken(string token, int id)
+    {
+        using var connection = new NpgsqlConnection(ConnectionString);
+        connection.Open();
+
+
+        using var cmd = new NpgsqlCommand("UPDATE users SET token = @token WHERE id = @id", connection);
+        cmd.Parameters.AddWithValue("@token", token);
+        cmd.Parameters.AddWithValue("@id", id);
+        cmd.ExecuteNonQuery();
+    }
+
     // public void Remove(int id)
     // {
         

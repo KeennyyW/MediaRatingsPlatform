@@ -71,8 +71,7 @@ public class Server
 
                 if (parts[0] == "users")
                 {
-                _userController.Handle(context, parts);
-
+                    await _userController.Handle(context, parts);
                 }
 
                 else
@@ -82,7 +81,7 @@ public class Server
                         Error = "not found",
                     };
 
-                    await SendJSON(resp, 404, response);
+                    await JSONhelper.SendJSON(resp, 404, response);
 
                 }
             }
@@ -90,8 +89,7 @@ public class Server
             {
                 if (parts[0] == "users")
                 {
-                _userController.Handle(context, parts);
-
+                    await _userController.Handle(context, parts);
                 }
             }
             else
@@ -121,7 +119,8 @@ public class Server
                 Error = "not found",
             };
 
-            await SendJSON(resp, 500, response);
+
+            await JSONhelper.SendJSON(resp, 500, response);
         }
 
         finally
@@ -130,16 +129,5 @@ public class Server
         }
     }
 
-    private async Task SendJSON(HttpListenerResponse resp, int statusCode,  ApiResponse data)
-    {
 
-        string json = JsonSerializer.Serialize(data);
-        byte[] bytes = Encoding.UTF8.GetBytes(json);
-
-        resp.StatusCode = statusCode;
-        resp.ContentType = "application/json; charset=utf-8";
-        resp.ContentLength64 = bytes.Length;
-
-        await resp.OutputStream.WriteAsync(bytes, 0, bytes.Length);
-    }
 }

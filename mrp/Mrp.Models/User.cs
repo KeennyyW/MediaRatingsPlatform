@@ -6,4 +6,5 @@ public class User
     public string Username { get; set; } = "";
     public string PasswordHash { get; set; } = "";
     public DateTime CreatedAt { get; set; }
+    public string? Token {get; set; }
 }
