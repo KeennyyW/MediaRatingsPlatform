@@ -9,6 +9,7 @@ namespace Mrp.Api.Controller;
 
 using System.Security.Authentication;
 using Mrp.Api.RequestModels;
+using Mrp.Models;
 
 public class UserController
 {
@@ -71,33 +72,53 @@ public class UserController
 
             catch (InvalidCredentialException e)
             {
-                var response = new ApiResponse
-                {
-                    Error = e.Message
-                };
-
-                await JSONhelper.SendJSON(resp, 401, response);  
+                await SendError(resp, 401, e.Message);
             }
             catch (ArgumentException e)
             {
-                var response = new ApiResponse
-                {
-                    Error = e.Message
-                };
-
-                await JSONhelper.SendJSON(resp, 400, response);  
+                await SendError(resp, 400, e.Message); 
             }
             catch (JsonException e)
             {
-                var response = new ApiResponse
-                {
-                    Error = e.Message
-                };
-
-                await JSONhelper.SendJSON(resp, 400, response);                  
+                await SendError(resp, 400, e.Message);                 
             }
 
         }
+        else if (parts[1] == "me")
+        {
+            string? header = context.Request.Headers["Authorization"];
+
+            var resp = context.Response;
+            if (header == null || !header.StartsWith("Bearer "))
+            {
+                await SendError(resp, 400, "No bearer token");  
+            }
+
+            string token = header.Substring(7);
+            User? user = _userService.GetUserByToken(token);
+            
+            if (user == null)
+            {
+                await SendError(resp, 401, "user is null");
+            }
+
+            var response =  new ApiResponse
+            {
+                Data = user.Username
+            };
+
+            await JSONhelper.SendJSON(resp, 200, response);
+        }
         
     }
+
+private async Task SendError(HttpListenerResponse resp, int statusCode, string message)
+{
+    var response = new ApiResponse 
+    { 
+        Error = message 
+    };
+    
+    await JSONhelper.SendJSON(resp, statusCode, response);
+}
 }

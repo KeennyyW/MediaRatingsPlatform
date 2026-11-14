@@ -73,7 +73,7 @@ public class UserService
                 _repository.UpdateToken(token, user.Id);
 
                 return token;
-            }
+            } 
 
         }
         else
@@ -81,5 +81,16 @@ public class UserService
             throw new InvalidCredentialException("Password does not match");
         }
         
+    }
+
+
+    public User? GetUserByToken(string token)
+    {
+        if (string.IsNullOrWhiteSpace(token))
+        {
+            return null;
+        }
+
+        return _repository.GetByToken(token);
     }
 }

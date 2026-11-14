@@ -101,7 +101,6 @@ public class AdoNetUserRepository : IUserRepository {
 
         using var reader = cmd.ExecuteReader();
 
-        return null;
 
         if (!reader.Read())
         {
@@ -110,10 +109,11 @@ public class AdoNetUserRepository : IUserRepository {
         
         var user = new User
         {
-            Id = reader.GetInt32(reader.GetOrdinal("id")),
-            Username = reader.GetString(reader.GetOrdinal("username")),
-            PasswordHash = reader.GetString(reader.GetOrdinal("password_hash")),
-            CreatedAt = reader.GetDateTime(reader.GetOrdinal("created_at"))
+            Id = reader.GetInt32(0),
+            Username = reader.GetString(1),
+            PasswordHash = reader.GetString(2),
+            CreatedAt = reader.GetDateTime(3),
+            Token = reader.GetString(4)
         };
 
         return user;
