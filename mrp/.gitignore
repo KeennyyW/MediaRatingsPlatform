@@ -404,3 +404,6 @@ FodyWeavers.xsd
 .env
 
 pgdata/
+
+.postman
+postman/globals
