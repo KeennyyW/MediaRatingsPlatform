@@ -18,11 +18,13 @@ public class Server
     public static int RequestCount = 0;
 
     private UserController _userController;
-    public Server(string port, UserController userController)
+    private readonly MediaController _mediaController;
+    public Server(string port, UserController userController, MediaController mediaController)
     {
         Listener.Prefixes.Add($"http://localhost:{port}/");
 
         _userController = userController;
+        _mediaController = mediaController;
     }
 
     public async Task Start()
@@ -73,6 +75,10 @@ public class Server
                 {
                     await _userController.Handle(context, parts);
                 }
+                else if (parts[0] == "media")
+                {
+                    await _mediaController.Handle(context, parts);
+                }
 
                 else
                 {
@@ -90,6 +96,26 @@ public class Server
                 if (parts[0] == "users")
                 {
                     await _userController.Handle(context, parts);
+                }
+                else if (parts[0] == "media")
+                {
+                    await _mediaController.Handle(context, parts);
+                }
+            }
+
+            else if (req.HttpMethod == "PUT")
+            {
+                if (parts[0] == "media")
+                {
+                    await _mediaController.Handle(context, parts);
+                }
+            }
+
+            else if (req.HttpMethod == "DELETE")
+            {
+                if (parts[0] == "media")
+                {
+                    await _mediaController.Handle(context, parts);
                 }
             }
             else

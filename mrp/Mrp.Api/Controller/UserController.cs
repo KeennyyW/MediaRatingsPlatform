@@ -91,7 +91,8 @@ public class UserController
             var resp = context.Response;
             if (header == null || !header.StartsWith("Bearer "))
             {
-                await SendError(resp, 400, "No bearer token");  
+                await SendError(resp, 401, "No bearer token");  
+                return;
             }
 
             string token = header.Substring(7);
@@ -100,6 +101,7 @@ public class UserController
             if (user == null)
             {
                 await SendError(resp, 401, "user is null");
+                return;
             }
 
             var response =  new ApiResponse
@@ -118,7 +120,7 @@ private async Task SendError(HttpListenerResponse resp, int statusCode, string m
     { 
         Error = message 
     };
-    
+
     await JSONhelper.SendJSON(resp, statusCode, response);
 }
 }
